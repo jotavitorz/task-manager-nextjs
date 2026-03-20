@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD25EtiNDv-bkKlClN3G_IS0g--Yq2Bbk0",
-  authDomain: "tarefasplus-abd9c.firebaseapp.com",
-  projectId: "tarefasplus-abd9c",
-  storageBucket: "tarefasplus-abd9c.firebasestorage.app",
-  messagingSenderId: "343185819008",
-  appId: "1:343185819008:web:6e4cc0c5447c11aee26d65"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 
 const fibaseApp = initializeApp(firebaseConfig);
