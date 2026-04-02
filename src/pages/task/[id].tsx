@@ -7,6 +7,7 @@ import { db } from "../../services/firebaseConnection";
 import { doc, collection, query, where, getDoc, addDoc, getDocs, deleteDoc} from "firebase/firestore";
 import { Textarea } from "../../components/textarea";
 import { FaTrash } from "react-icons/fa";
+import toast from "react-hot-toast"
 
 interface TaskProps {
     item: {
@@ -60,8 +61,16 @@ export default function Task({item, allComments}: TaskProps){
 
             setComments((oldItem) => [...oldItem, data])
             setInput("");
+            toast.success("Comentário enviado com sucesso!", {
+                style: {
+                    borderRadius: 10,
+                    backgroundColor: "#121212",
+                    color: "#FAFAFA",
+                }
+            })
         }catch(err){
             console.log(err);
+            toast.error("Erro ao enviar comentário");
         }
     }
 
@@ -72,8 +81,16 @@ export default function Task({item, allComments}: TaskProps){
 
             const deleteComment = comments.filter(comment => comment.id !== id);
             setComments(deleteComment);
+            toast.success("Comentário excluído com sucesso!", {
+                style: {
+                    borderRadius: 10,
+                    backgroundColor: "#e93939",
+                    color: "#FAFAFA"
+                }
+            });  
         }catch(err){
             console.log(err);
+            toast.error("Erro ao excluir comentário");
         }
     }
 
@@ -152,8 +169,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
         })
     })
 
-    console.log(allComments);
-
     const snapshot = await getDoc(docRef)
 
     if(snapshot.data() === undefined) {
@@ -183,8 +198,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
         user: snapshot.data()?.user,
         taskId: id,
     }
-
-    console.log(task);
 
     return {
         props: {

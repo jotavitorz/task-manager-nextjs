@@ -10,6 +10,7 @@ import { db } from "../../services/firebaseConnection";
 import { addDoc, collection, query, orderBy, 
     where, onSnapshot, doc, deleteDoc } from "firebase/firestore";
 import Link from "next/link";
+import toast from "react-hot-toast"
 
 interface HomeProps {
     user: {
@@ -83,6 +84,13 @@ export default function Dashboard({ user }: HomeProps) {
 
             setInput("")
             setPublicTask(false);
+            toast.success("Tarefa cadastrada com sucesso!", {
+                style: {
+                    borderRadius: 10,
+                    backgroundColor: "#121212",
+                    color: "#FFF"
+                }
+            });            
         }catch(err){
             console.log(err);
         }
@@ -93,13 +101,26 @@ export default function Dashboard({ user }: HomeProps) {
             `${process.env.NEXT_PUBLIC_URL}/task/${id}`
         );
 
-        alert("URL Copiada com sucesso!");
+        toast.success("URL Copiada com sucesso!", {
+            style: {
+                borderRadius: 10,
+                backgroundColor: "#FAFAFA",
+                color: "#3183ff"
+            }
+        });
     }
 
     async function handleDeleteTask(id: string) {
         const docRef = doc(db, "tarefas", id);
 
         await deleteDoc(docRef);
+        toast.success("Tarefa excluída com sucesso!", {
+            style: {
+                borderRadius: 10,
+                backgroundColor: "#e93939",
+                color: "#FAFAFA"
+            }
+        });        
     }
 
     return (

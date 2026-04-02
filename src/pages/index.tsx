@@ -55,8 +55,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const commentSnapshot = await getDocs(commentRef);
   const postSnapshot = await getDocs(postRef);
-  
 
+  
   return {
     props: {
       posts: postSnapshot.size || 0,
