@@ -1,40 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Tarefas Plus
 
-## Getting Started
+![Badge Next](https://img.shields.io/badge/Next.js-000000?style=for-the-badge\&logo=next.js\&logoColor=white)
+![Badge React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)
+![Badge Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=nodedotjs\&logoColor=white)
+![Badge CSS](https://img.shields.io/badge/CSS%20Modules-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
 
-First, run the development server:
+---
+
+## Sobre o projeto
+
+Este projeto é uma aplicação desenvolvida com **Next.js** com foco em aprendizado prático do ecossistema React com renderização híbrida.
+A aplicação explora conceitos como **SSR (Server Side Rendering)**, **SSG (Static Site Generation)**, rotas baseadas em arquivos e autenticação de usuários com Google utilizando **NextAuth.js**.
+
+O objetivo principal é evoluir o conhecimento no framework através da construção de páginas, testes e experimentações com boas práticas de desenvolvimento.
+
+---
+
+## Tecnologias utilizadas
+
+O projeto foi desenvolvido com as seguintes tecnologias:
+
+* **Next.js** — Framework React com SSR e SSG
+* **React** — Biblioteca para construção de interfaces
+* **Node.js** — Ambiente de execução do Next.js
+* **NextAuth.js** — Autenticação com Google (OAuth) 
+* **CSS Modules** — Estilização com escopo local
+* **npm / yarn** — Gerenciamento de dependências
+
+---
+
+## Funcionalidades
+
+* Autenticação de usuários com Google (NextAuth.js)  
+* Proteção de rotas baseada em login  
+* Estrutura de páginas com rotas automáticas do Next.js
+* Renderização com SSR e SSG
+* Organização de componentes reutilizáveis
+* Estilização com CSS Modules
+* Página de tarefas (exemplo prático)
+* Estrutura preparada para APIs internas (`/api`)
+
+---
+
+## Como rodar o projeto
+
+### Pré-requisitos
+
+* [Node.js](https://nodejs.org/) (versão LTS)
+* [Git](https://git-scm.com/)
+
+---
+
+### 📥 Clonando o repositório
+
+```bash
+git clone https://github.com/jotavitorz/tarefas-plus.git
+cd tarefas-plus
+```
+
+---
+
+### Instalando dependências
+
+```bash
+npm install
+# ou
+yarn
+```
+
+---
+
+### Executando o projeto
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto será iniciado em:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Build para produção
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```
+src/
+ ├── pages/        # Rotas da aplicação
+ │   ├── api/      # Rotas de API
+ │   ├── task/     # Página de tarefas
+ ├── components/   # Componentes reutilizáveis
+public/            # Arquivos estáticos
+styles/            # Estilos globais
+```
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribuições & Observações
 
-## Deploy on Vercel
+Fique à vontade para estudar, modificar e evoluir este projeto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Utilize boas práticas de commits
+* Organize bem os componentes
+* Use como base para projetos maiores
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Projeto voltado para aprendizado e evolução contínua.
+
+---
+
+<p align="center">
+  Feito por <b>João Vitor</b> 
+</p>
