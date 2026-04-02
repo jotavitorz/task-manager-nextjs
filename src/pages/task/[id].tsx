@@ -33,13 +33,15 @@ export default function Task({item, allComments}: TaskProps){
 
     const [input, setInput] = useState("");
     const [comments, setComments] = useState<CommentProps[]>(allComments || []);
+    const [loading, setLoading] = useState(false);
 
     async function handleComment(event: FormEvent) {
         event.preventDefault();
 
-        if(input === "") return;
+        if(!input.trim()) return;
 
         if(!session?.user?.email || !session?.user?.name) return;
+        setLoading(true);
 
         try {
             const docRef = await addDoc(collection(db, "comments"), {
@@ -71,6 +73,8 @@ export default function Task({item, allComments}: TaskProps){
         }catch(err){
             console.log(err);
             toast.error("Erro ao enviar comentário");
+        }finally {
+            setLoading(false);
         }
     }
 
@@ -122,7 +126,7 @@ export default function Task({item, allComments}: TaskProps){
                         className={styles.button} 
                         disabled={!session?.user}
                     >
-                        Enviar comentário
+                        {loading ? "Enviando..." : "Enviar comentário"}
                     </button>
                 </form>
             </section>

@@ -30,7 +30,7 @@ export default function Dashboard({ user }: HomeProps) {
     const [input, setInput] = useState("");
     const [publicTask, setPublicTask] = useState(false);
     const [tasks, setTasks] = useState<TaskProps[]>([]);
-
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
 
@@ -71,7 +71,8 @@ export default function Dashboard({ user }: HomeProps) {
     async function handleRegisterTask(event: FormEvent) {
         event.preventDefault();
 
-        if(input === "") return;
+        if(!input.trim()) return;
+        setLoading(true);
 
         try {
             const dbRef = collection(db, "tarefas");
@@ -93,6 +94,8 @@ export default function Dashboard({ user }: HomeProps) {
             });            
         }catch(err){
             console.log(err);
+        }finally {
+            setLoading(false);
         }
     }
 
@@ -151,7 +154,7 @@ export default function Dashboard({ user }: HomeProps) {
                             </div>
 
                             <button className={styles.button} type="submit">
-                                Registrar
+                                {loading ? "Registrando..." : "Registrar"}
                             </button>
                         </form>
                     </div>
