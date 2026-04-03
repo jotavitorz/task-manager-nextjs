@@ -4,15 +4,26 @@
 ![Badge React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)
 ![Badge Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=nodedotjs\&logoColor=white)
 ![Badge CSS](https://img.shields.io/badge/CSS%20Modules-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
+![Badge Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
 ---
 
 ## Sobre o projeto
 
-Este projeto é uma aplicação desenvolvida com **Next.js** com foco em aprendizado prático do ecossistema React com renderização híbrida.
-A aplicação explora conceitos como **SSR (Server Side Rendering)**, **SSG (Static Site Generation)**, rotas baseadas em arquivos e autenticação de usuários com Google utilizando **NextAuth.js**.
+Este projeto é uma aplicação desenvolvida com **Next.js** com foco em aprendizado prático do ecossistema React com renderização híbrida. A aplicação explora conceitos como **SSR (Server Side Rendering)**, **SSG (Static Site Generation)**, rotas baseadas em arquivos, autenticação de usuários com Google utilizando **NextAuth.js** e integração com banco de dados em tempo real utilizando **Firebase**.
 
 O objetivo principal é evoluir o conhecimento no framework através da construção de páginas, testes e experimentações com boas práticas de desenvolvimento.
+
+
+## Layout
+
+<p align="center">
+  <img src="./screenshots/home.png" width="800">
+</p>
+
+<p align="center">
+  <img src="./screenshots/dashboard.png" width="800">
+</p>
 
 ---
 
@@ -24,6 +35,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 * **React** — Biblioteca para construção de interfaces
 * **Node.js** — Ambiente de execução do Next.js
 * **NextAuth.js** — Autenticação com Google (OAuth) 
+* **Firebase** — Banco de dados e serviços backend (Firestore)
 * **CSS Modules** — Estilização com escopo local
 * **npm / yarn** — Gerenciamento de dependências
 
@@ -36,6 +48,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 * Estrutura de páginas com rotas automáticas do Next.js
 * Renderização com SSR e SSG
 * Organização de componentes reutilizáveis
+* Integração com Firebase Firestore para armazenamento de tarefas e comentários
 * Estilização com CSS Modules
 * Página de tarefas (exemplo prático)
 * Estrutura preparada para APIs internas (`/api`)
@@ -91,21 +104,6 @@ npm run build
 npm start
 ```
 
----
-
-## Estrutura do projeto
-
-```
-src/
- ├── pages/        # Rotas da aplicação
- │   ├── api/      # Rotas de API
- │   ├── task/     # Página de tarefas
- ├── components/   # Componentes reutilizáveis
-public/            # Arquivos estáticos
-styles/            # Estilos globais
-```
----
-
 ## Contribuições & Observações
 
 Fique à vontade para estudar, modificar e evoluir este projeto.
@@ -119,5 +117,5 @@ Projeto voltado para aprendizado e evolução contínua.
 ---
 
 <p align="center">
-  Feito por <b>João Vitor</b> 
+  Feito por <b>João Vitor 🖖</b> 
 </p>
