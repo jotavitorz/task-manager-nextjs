@@ -82,8 +82,8 @@ O objetivo principal é evoluir o conhecimento no framework através da constru�
 ### 📥 Clonando o repositório
 
 ```bash
-git clone https://github.com/jotavitorz/tarefas-plus.git
-cd tarefas-plus
+git clone https://github.com/jotavitorz/task-manager-nextjs.git
+cd task-manager-nextjs
 ```
 
 ---
